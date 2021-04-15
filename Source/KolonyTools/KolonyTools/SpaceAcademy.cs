@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 
 namespace KolonyTools
@@ -20,15 +21,18 @@ namespace KolonyTools
             {
                 var oldLevel = crew.experienceLevel;
                 var teacher = GetTeacher(crew.experienceTrait.Title);
+
                 //Teachers have to be a level higher than students
                 if (teacher.experienceLevel > crew.experienceLevel)
                 {
-                    //Then, we simulate training by creating some new flights.  
-                    var maxLevel = GetSituationLevel();
+                    // Determine max possible level gain from this teacher
+                    var maxGainForSituation = GetSituationLevel();
+                    var maxGain = Math.Min(teacher.experienceLevel, crew.experienceLevel + maxGainForSituation);
 
+                    //Then, we simulate training by creating some new flights.  
                     foreach (var flight in teacher.careerLog.GetFlights())
                     {
-                        if (crew.experienceLevel < maxLevel)
+                        if (crew.experienceLevel < maxGain)
                         {
                             foreach (var logEntry in flight.Entries)
                             {
@@ -43,6 +47,10 @@ namespace KolonyTools
                                 crew.experience = KerbalRoster.CalculateExperience(crew.flightLog);
                                 crew.experienceLevel = KerbalRoster.CalculateExperienceLevel(crew.experience);
                             }
+                        }
+                        else
+                        {
+                            break;
                         }
                     }
                     if (oldLevel < crew.experienceLevel)
@@ -74,7 +82,7 @@ namespace KolonyTools
         private int GetSituationLevel()
         {
             var situationLevel = MaxLevelOrbit;
-            if (vessel.Landed || vessel.Splashed)
+            if (vessel.LandedOrSplashed)
             {
                 if (vessel.mainBody.GetName() == "Kerbin")
                 {

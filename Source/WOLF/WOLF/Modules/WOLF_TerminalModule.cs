@@ -33,6 +33,7 @@ namespace WOLF
         }
         #endregion
 
+        public IDepot Depot { get; protected set; }
         public bool IsConnectedToDepot { get; protected set; }
 
         protected override void ConnectToDepot()
@@ -138,6 +139,7 @@ namespace WOLF
                 }
                 else
                 {
+                    Depot = depot;
                     Actions[nameof(ConnectToDepotAction)].active = false;
                     Events[nameof(ConnectToDepotEvent)].guiActive = false;
                     Events[nameof(ShowWindowEvent)].guiActive = true;

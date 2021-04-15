@@ -10,43 +10,43 @@
 
         [GameParameters.CustomIntParameterUI(
             "#autoLOC_WOLF_DEPOT_FUNDS_REWARD_HOMEWORLD_OPTION_TITLE",
-            autoPersistance = true, minValue = 1000, maxValue = 50000, stepSize = 1000,
+            autoPersistance = true, minValue = 0, maxValue = 50000, stepSize = 1000,
             toolTip = "#autoLOC_WOLF_DEPOT_FUNDS_REWARD_HOMEWORLD_OPTION_TOOLTIP")]
         public int DepotFundsRewardHomeworld = 10000;
 
         [GameParameters.CustomIntParameterUI(
             "#autoLOC_WOLF_DEPOT_FUNDS_REWARD_OPTION_TITLE",
-            autoPersistance = true, minValue = 10000, maxValue = 100000, stepSize = 1000,
+            autoPersistance = true, minValue = 0, maxValue = 100000, stepSize = 1000,
             toolTip = "#autoLOC_WOLF_DEPOT_FUNDS_REWARD_OPTION_TOOLTIP")]
         public int DepotFundsReward = 50000;
 
         [GameParameters.CustomIntParameterUI(
             "#autoLOC_WOLF_TRANSPORT_FUNDS_REWARD_OPTION_TITLE",
-            autoPersistance = true, minValue = 10000, maxValue = 50000, stepSize = 1000,
+            autoPersistance = true, minValue = 0, maxValue = 50000, stepSize = 1000,
             toolTip = "#autoLOC_WOLF_TRANSPORT_FUNDS_REWARD_OPTION_TOOLTIP")]
         public int TransportFundsReward = 10000;
 
         [GameParameters.CustomIntParameterUI(
             "#autoLOC_WOLF_SURVEY_SCIENCE_REWARD_HOMEWORLD_OPTION_TITLE",
-            autoPersistance = true, minValue = 10, maxValue = 100, stepSize = 10,
+            autoPersistance = true, minValue = 0, maxValue = 100, stepSize = 10,
             toolTip = "#autoLOC_WOLF_SURVEY_SCIENCE_REWARD_HOMEWORLD_OPTION_TOOLTIP")]
         public int SurveyScienceRewardHomeworld = 50;
 
         [GameParameters.CustomIntParameterUI(
             "#autoLOC_WOLF_SCIENCE_SURVEY_REWARD_OPTION_TITLE",
-            autoPersistance = true, minValue = 100, maxValue = 1000, stepSize = 50,
+            autoPersistance = true, minValue = 0, maxValue = 1000, stepSize = 50,
             toolTip = "#autoLOC_WOLF_SCIENCE_SURVEY_REWARD_OPTION_TOOLTIP")]
         public int SurveyScienceReward = 250;
 
         [GameParameters.CustomIntParameterUI(
             "#autoLOC_WOLF_CREW_REPUTATION_REWARD_HOMEWORLD_OPTION_TITLE",
-            autoPersistance = true, minValue = 1, maxValue = 20, stepSize = 1,
+            autoPersistance = true, minValue = 0, maxValue = 20, stepSize = 1,
             toolTip = "#autoLOC_WOLF_CREW_REPUTATION_REWARD_HOMEWORLD_OPTION_TOOLTIP")]
         public int CrewReputationRewardHomeworld = 5;
 
         [GameParameters.CustomIntParameterUI(
             "#autoLOC_WOLF_CREW_REPUTATION_REWARD_OPTION_TITLE",
-            autoPersistance = true, minValue = 5, maxValue = 50, stepSize = 5,
+            autoPersistance = true, minValue = 0, maxValue = 50, stepSize = 5,
             toolTip = "#autoLOC_WOLF_CREW_REPUTATION_REWARD_OPTION_TOOLTIP")]
         public int CrewReputationReward = 10;
 

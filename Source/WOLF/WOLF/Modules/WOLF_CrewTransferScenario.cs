@@ -471,9 +471,10 @@ namespace WOLF
             {
                 return null;
             }
-            // Get all nearby vessels
+            // Get all nearby vessels without command seats
             var vessels = LogisticsTools
-                .GetNearbyVessels(TERMINAL_RANGE, true, activeVessel, landedOnly);
+                .GetNearbyVessels(TERMINAL_RANGE, true, activeVessel, landedOnly)
+                .Where(v => !v.parts.Any(p => p.FindModulesImplementing<KerbalSeat>().Any()));
             var kerbals = new List<ProtoCrewMember>();
             foreach (var vessel in vessels)
             {
@@ -653,6 +654,7 @@ namespace WOLF
                             }
                             else
                             {
+                                ClearWarning(SelectedFlightPanelLabels.NoKerbalsToBoardMessage);
                                 var passengers = kerbals
                                     .Select(k => new PassengerMetadata
                                     {

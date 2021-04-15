@@ -275,6 +275,10 @@ namespace WOLF
             if (GUILayout.Button("CLOSE", _closeButtonStyle))
             {
                 GuiOff();
+                if (_wolfButton != null)
+                {
+                    _wolfButton.SetFalse(false);
+                }
             }
             GUILayout.EndHorizontal();
 

@@ -29,8 +29,11 @@ namespace WOLF
             if (Funding.Instance != null)
             {
                 var funds = WOLF_GameParameters.TransportFundsRewardValue * payload;
-                Funding.Instance.AddFunds(funds, TransactionReasons.ContractReward);
-                Messenger.DisplayMessage(string.Format(FUNDS_ADDED_MESSAGE, funds.ToString("F0")));
+                if (funds > 0)
+                {
+                    Funding.Instance.AddFunds(funds, TransactionReasons.ContractReward);
+                    Messenger.DisplayMessage(string.Format(FUNDS_ADDED_MESSAGE, funds.ToString("F0")));
+                }
             }
         }
 
@@ -41,8 +44,11 @@ namespace WOLF
                 var funds = isHomeworld
                     ? WOLF_GameParameters.DepotFundsRewardHomeworldValue
                     : WOLF_GameParameters.DepotFundsRewardValue;
-                Funding.Instance.AddFunds(funds, TransactionReasons.ContractReward);
-                Messenger.DisplayMessage(string.Format(FUNDS_ADDED_MESSAGE, funds.ToString("F0")));
+                if (funds > 0)
+                {
+                    Funding.Instance.AddFunds(funds, TransactionReasons.ContractReward);
+                    Messenger.DisplayMessage(string.Format(FUNDS_ADDED_MESSAGE, funds.ToString("F0")));
+                }
             }
         }
 
@@ -54,8 +60,11 @@ namespace WOLF
                     ? WOLF_GameParameters.CrewReputationRewardHomeworldValue
                     : WOLF_GameParameters.CrewReputationRewardValue;
                 float rep = configValue * crewPoints;
-                Reputation.Instance.AddReputation(rep, TransactionReasons.ContractReward);
-                Messenger.DisplayMessage(string.Format(REPUTATION_ADDED_MESSAGE, rep.ToString("F0")));
+                if (rep > 0)
+                {
+                    Reputation.Instance.AddReputation(rep, TransactionReasons.ContractReward);
+                    Messenger.DisplayMessage(string.Format(REPUTATION_ADDED_MESSAGE, rep.ToString("F0")));
+                }
             }
         }
 
@@ -66,8 +75,11 @@ namespace WOLF
                 var science = isHomeworld
                     ? WOLF_GameParameters.SurveyScienceRewardHomeworldValue
                     : WOLF_GameParameters.SurveyScienceRewardValue;
-                ResearchAndDevelopment.Instance.AddScience(science, TransactionReasons.ContractReward);
-                Messenger.DisplayMessage(string.Format(SCIENCE_ADDED_MESSAGE, science.ToString("F0")));
+                if (science > 0)
+                {
+                    ResearchAndDevelopment.Instance.AddScience(science, TransactionReasons.ContractReward);
+                    Messenger.DisplayMessage(string.Format(SCIENCE_ADDED_MESSAGE, science.ToString("F0")));
+                }
             }
         }
     }
