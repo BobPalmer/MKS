@@ -1,9 +1,9 @@
 {
      "NAME":"MKS",
-	 "URL":"https://raw.githubusercontent.com/BobPalmer/MKS/master/FOR_RELEASE/GameData/UmbraSpaceIndustries/MKS/MKS.version",
-	 "DOWNLOAD":"https://github.com/BobPalmer/MKS/releases",
+	 "URL":"https://raw.githubusercontent.com/UmbraSpaceIndustries/MKS/master/FOR_RELEASE/GameData/UmbraSpaceIndustries/MKS/MKS.version",
+	 "DOWNLOAD":"https://github.com/UmbraSpaceIndustries/MKS/releases",
      "GITHUB":{
-         "USERNAME":"BobPalmer",
+         "USERNAME":"UmbraSpaceIndustries",
          "REPOSITORY":"MKS",
          "ALLOW_PRE_RELEASE":false
      },
